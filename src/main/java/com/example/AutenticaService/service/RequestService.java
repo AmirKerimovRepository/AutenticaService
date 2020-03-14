@@ -32,7 +32,7 @@ public class RequestService {
     }
 
     public Request addRequest(Request request) {
-        validationService.checkNotNull(request);
+        validationService.validate(request);
         return repository.save(request);
 
     }
@@ -50,7 +50,7 @@ public class RequestService {
         if (request == null) {
             throw new RequestValidationServiceException("Wrong Request , its not possible to update ");
         } else {
-            repository.updateRequest(request);
+            repository.save(request);
         }
 
     }
