@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Update Request</title>
+</head>
+<body>
+<form action="#" th:action="@{/update-request}" th:object="${request}" method="post">
+    <h1>Update Request : </h1>
+
+    <br>
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="Request ID">
+    <br>
+    <br>
+
+    <div class="form-group">
+
+        <label th:for="manufacturer">Manufacturer</label>
+        <br>
+        <br>
+        <select th:field="*{manufacturer}">
+            <option th:each="manufacturer : ${manufacturerTypes}"
+                    th:text="${manufacturer.manufacturerName}"
+                    th:value="${manufacturer}"></option>
+        </select>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <label th:for="category">Category</label>
+        <br>
+        <br>
+        <select th:field="*{categoryEnums}">
+            <option th:each="category : ${CategoryTypes}"
+                    th:text="${category.equipmentName}"
+                    th:value="${category}"></option>
+        </select>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="quantity">Quantity</label>
+        <br>
+        <br>
+        <input type="number" min = "0" th:field="*{quantity}" id="quantity" placeholder="quantity">
+    </div>
+
+    <br>
+
+    <div>
+        <label for="description">Description</label>
+        <br>
+        <br>
+        <textarea type="text" th:field="*{description}" id="description" placeholder="description"></textarea>
+    </div>
+
+    <br>
+
+    <input type="submit" value="Update Request">
+
+    <p>If you click the "Update Request" button, the form-data will be Updated!</p>
+
+
+</form>
+</body>
+</html>

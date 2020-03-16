@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Request List :</title>
+    <meta charset="UTF-8">
+    <title>Request List</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/requests}" th:object="${#request}" method="get">
+<div th:switch="${requests}">
+
+        <h1>Request List: </h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>manufacturer</th>
+                <th>category</th>
+                <th>quantity</th>
+                <th>description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="request : ${requests}">
+                <td th:text="${request.id}"></td>
+                <td th:text="${request.manufacturer}"></td>
+                <td th:text="${request.categoryEnums}"></td>
+                <td th:text="${request.quantity}"></td>
+                <td th:text="${request.description}"></td>
+                <td><a th:href="@{request-update/{id}(id=${request.id})}">Edit</a></td>
+                <td><a th:href="@{request-delete/{id}(id=${request.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+<p>If you click the "Add Request" button, you will can add New Request!</p>
+<br>
+    <p><a href="/request-add">Add Request</a></p>
+
+</div>
+</form>
+</body>
+</html>
+</html>

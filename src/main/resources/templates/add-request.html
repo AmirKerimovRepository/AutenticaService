@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Request List : </title>
+</head>
+<body>
+<form action="#" th:action="@{/add-request}" th:object="${#request}" method="post">
+<h1>Add New Request : </h1>
+
+
+<div class="form-group">
+
+    <label th:for="manufacturer">Manufacturer</label>
+    <br>
+    <br>
+    <select th:field="*{manufacturer}">
+    <option th:each="manufacturer : ${manufacturerTypes}"
+    th:text="${manufacturer.manufacturerName}"
+    th:value="${manufacturer}"></option>
+    </select>
+</div>
+    <br>
+
+    <div class="form-group">
+        <label th:for="category">Category</label>
+        <br>
+        <br>
+        <select th:field="*{category}">
+            <option th:each="category : ${CategoryTypes}"
+                    th:text="${category.equipmentName}"
+                    th:value="${category}"></option>
+        </select>
+    </div>
+
+    <br>
+
+<div>
+    <label for="quantity">Quantity</label>
+    <br>
+    <br>
+    <input type="number" min = "0" th:field="*{quantity}" id="quantity" placeholder="quantity">
+</div>
+
+    <br>
+
+    <div>
+    <label for="description">Description</label>
+        <br>
+        <br>
+        <textarea type="text" th:field="*{description}" id="description" placeholder="description"></textarea>
+    </div>
+
+    <br>
+
+    <input type="submit" value="Add Request">
+
+    <p>If you click the "Add Request" button, the form-data will be Added!</p>
+
+</form>
+</body>
+</html>
