@@ -28,5 +28,4 @@ public enum CategoryEnums {
     public String getEquipmentName() {
         return equipmentName;
     }
-
 }

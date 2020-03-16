@@ -91,4 +91,5 @@ public class Request {
     public int hashCode() {
         return Objects.hash(id, manufacturer, category, quantity, description);
     }
+
 }

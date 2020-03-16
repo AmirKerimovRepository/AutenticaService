@@ -22,5 +22,4 @@ public enum ManufacturerEnums {
     public String getManufacturerName() {
         return manufacturerName;
     }
-
 }
