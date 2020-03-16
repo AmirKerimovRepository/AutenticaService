@@ -19,4 +19,8 @@ public enum ManufacturerEnums {
         this.manufacturerName = manufacturerName;
     }
 
+    public String getManufacturerName(){
+        return manufacturerName;
+    }
+
 }

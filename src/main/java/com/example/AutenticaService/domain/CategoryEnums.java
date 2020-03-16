@@ -10,17 +10,23 @@ public enum CategoryEnums {
     POWER_SUPPLY("Power Supply"),
     PC_CORPUS("Pc Corpus"),
     PC("PC"),
-    LAPTOP("Laptop"),
     SCANNER("Scanner"),
     FAX("Fax"),
+    LAPTOP("Laptop"),
     KEYBOARD("Keyboard"),
     SPEAKERS("Speakers"),
     MOUSE("Mouse"),
     PHONE("Phone");
+
 
     private final String equipmentName;
 
     CategoryEnums(String equipmentName){
         this.equipmentName = equipmentName;
     }
+
+    public String getEquipmentName() {
+        return equipmentName;
+    }
+
 }

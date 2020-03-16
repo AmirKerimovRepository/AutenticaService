@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import java.time.LocalDateTime;
@@ -27,12 +28,13 @@ public class RequestController {
     public String findAllRequests(Model model) {
         List<Request> requests = requestService.findAllRequests();
         model.addAttribute("requests", requests);
-        return "list-of-requests"; //наша страница в templates
+        return "/list-of-requests";
     }
 
     @GetMapping("/request-add")
+    @ModelAttribute
     public String addRequestForm(Request request, Model model) {
-        model.addAttribute("manufacturerTypes", ManufacturerEnums.values());
+        model.addAttribute( "manufacturerTypes", ManufacturerEnums.values());
         model.addAttribute("CategoryTypes", CategoryEnums.values());
         return "add-request";
     }
@@ -52,6 +54,7 @@ public class RequestController {
     }
 
     @GetMapping("/request-update{id}")
+    @ModelAttribute
     public String updateRequestForm(@PathVariable("id") Long id, Model model) {
         Request request = requestService.findById(id);
         model.addAttribute("request", request);
@@ -60,7 +63,7 @@ public class RequestController {
         return "update-request";
     }
 
-    @PostMapping("update-request")
+    @PostMapping("/update-request")
     public String updateRequest(Request request) {
         requestService.updateRequest(request);
         return "redirect:/requests";
