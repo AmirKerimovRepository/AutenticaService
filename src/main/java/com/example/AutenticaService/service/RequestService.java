@@ -4,6 +4,7 @@ import com.example.AutenticaService.Exceptions.RequestValidationServiceException
 import com.example.AutenticaService.domain.Request;
 import com.example.AutenticaService.repository.RequestRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service

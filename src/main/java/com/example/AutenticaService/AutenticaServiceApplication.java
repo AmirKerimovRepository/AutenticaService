@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AutenticaServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AutenticaServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AutenticaServiceApplication.class, args);
+    }
 
 }

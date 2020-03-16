@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -31,10 +32,10 @@ public class RequestController {
         return "/list-of-requests";
     }
 
-    @GetMapping("/request-add")
     @ModelAttribute
+    @GetMapping("/request-add")
     public String addRequestForm(Request request, Model model) {
-        model.addAttribute( "manufacturerTypes", ManufacturerEnums.values());
+        model.addAttribute("manufacturerTypes", ManufacturerEnums.values());
         model.addAttribute("CategoryTypes", CategoryEnums.values());
         return "add-request";
     }
@@ -53,8 +54,8 @@ public class RequestController {
 
     }
 
-    @GetMapping("/request-update{id}")
     @ModelAttribute
+    @GetMapping("/request-update{id}")
     public String updateRequestForm(@PathVariable("id") Long id, Model model) {
         Request request = requestService.findById(id);
         model.addAttribute("request", request);
@@ -68,8 +69,6 @@ public class RequestController {
         requestService.updateRequest(request);
         return "redirect:/requests";
     }
-
-
 
 
 }

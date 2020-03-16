@@ -1,12 +1,12 @@
 package com.example.AutenticaService.domain;
 
 public enum CategoryEnums {
-    MOTHERBOARD ("Motherboard"),
+    MOTHERBOARD("Motherboard"),
     SSD_DISK("SSD Disk"),
     VIDEO_CARD("Video Card"),
     RAM("RAM"),
     HARD_DRIVE("hard drive"),
-    PROCESSOR ("Processor"),
+    PROCESSOR("Processor"),
     POWER_SUPPLY("Power Supply"),
     PC_CORPUS("Pc Corpus"),
     PC("PC"),
@@ -21,7 +21,7 @@ public enum CategoryEnums {
 
     private final String equipmentName;
 
-    CategoryEnums(String equipmentName){
+    CategoryEnums(String equipmentName) {
         this.equipmentName = equipmentName;
     }
 

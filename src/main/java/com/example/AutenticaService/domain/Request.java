@@ -1,4 +1,5 @@
 package com.example.AutenticaService.domain;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;

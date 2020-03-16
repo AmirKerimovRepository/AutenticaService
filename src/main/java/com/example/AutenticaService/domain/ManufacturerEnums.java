@@ -15,11 +15,11 @@ public enum ManufacturerEnums {
 
     private String manufacturerName;
 
-    ManufacturerEnums(String manufacturerName){
+    ManufacturerEnums(String manufacturerName) {
         this.manufacturerName = manufacturerName;
     }
 
-    public String getManufacturerName(){
+    public String getManufacturerName() {
         return manufacturerName;
     }
 
